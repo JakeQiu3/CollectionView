@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "QSYCollectionViewController.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     UITableView *_tableView;
@@ -64,7 +64,25 @@
     Class cls;
 //    不同类型(特指出结构体类型)和字符串之间转换
     cls = NSClassFromString(_titileArray[indexPath.row]);
-    UIViewController *viewC = [[cls alloc] init];
+    
+//  CollectionView的布局
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+//  区头区尾的宽度默认都是屏宽（竖向是屏宽，竖向是屏高）
+    flowLayout.headerReferenceSize = CGSizeMake(100, 100);
+    flowLayout.footerReferenceSize = CGSizeMake(100, 100);
+    flowLayout.minimumInteritemSpacing = 10;
+    flowLayout.minimumLineSpacing = 15;
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    flowLayout.sectionInset = UIEdgeInsetsMake(20, 10, 20, 10);
+    flowLayout.itemSize = CGSizeMake(100, 150);
+    
+    
+    UIViewController *viewC;
+    if (indexPath.item == 0) {
+        viewC = [[cls alloc] initWithCollectionViewLayout:flowLayout];
+    } else {
+        viewC = [[cls alloc] init];
+    }
     [self.navigationController pushViewController:viewC animated:YES];
 }
 - (void)didReceiveMemoryWarning {
