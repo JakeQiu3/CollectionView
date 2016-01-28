@@ -27,8 +27,8 @@
 }
 
 - (void)loadData {
-    _fileNameArray = @[@"瀑布流 controller版",@"瀑布流 view版"].mutableCopy;
-    _titileArray = @[@"QSYCollectionViewController",@"CollectionViewController"].mutableCopy;
+    _fileNameArray = @[@"瀑布流 controller版",@"瀑布流 view版",@"瀑布流 升级版"].mutableCopy;
+    _titileArray = @[@"QSYCollectionViewController",@"CollectionViewController",@"UpdateCollectionViewController"].mutableCopy;
 }
 - (void)setUI {
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
