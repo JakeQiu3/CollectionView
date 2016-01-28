@@ -15,6 +15,12 @@
 		3045EE671C5140B500CC52E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3045EE651C5140B500CC52E9 /* Main.storyboard */; };
 		3045EE691C5140B500CC52E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3045EE681C5140B500CC52E9 /* Assets.xcassets */; };
 		3045EE6C1C5140B500CC52E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3045EE6A1C5140B500CC52E9 /* LaunchScreen.storyboard */; };
+		305A8D981C5A5CA200E140B7 /* RFQuiltLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 305A8D971C5A5CA200E140B7 /* RFQuiltLayout.m */; };
+		305A8D9C1C5A5CAC00E140B7 /* RFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305A8D9A1C5A5CAC00E140B7 /* RFViewController.m */; };
+		305A8D9D1C5A5CAC00E140B7 /* RFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305A8D9B1C5A5CAC00E140B7 /* RFViewController.xib */; };
+		305A8D9F1C5A5E8800E140B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305A8D9E1C5A5E8800E140B7 /* Foundation.framework */; };
+		305A8DA11C5A5E9000E140B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305A8DA01C5A5E9000E140B7 /* CoreGraphics.framework */; };
+		305A8DA31C5A5ED100E140B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305A8DA21C5A5ED100E140B7 /* UIKit.framework */; };
 		7329265E1C5851F4000230D0 /* ImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7329265D1C5851F4000230D0 /* ImageCollectionViewCell.m */; };
 		732926811C585603000230D0 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 732926611C585603000230D0 /* MKAnnotationView+WebCache.m */; };
 		732926821C585603000230D0 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 732926631C585603000230D0 /* NSData+ImageContentType.m */; };
@@ -34,7 +40,6 @@
 		732926901C585603000230D0 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 732926801C585603000230D0 /* UIView+WebCacheOperation.m */; };
 		732926921C58560A000230D0 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 732926911C58560A000230D0 /* Data.json */; };
 		732926941C585BF0000230D0 /* 占位图.png in Resources */ = {isa = PBXBuildFile; fileRef = 732926931C585BF0000230D0 /* 占位图.png */; };
-		733684901C5A1E870027A43D /* UpdateCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7336848F1C5A1E870027A43D /* UpdateCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +57,14 @@
 		3045EE681C5140B500CC52E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3045EE6B1C5140B500CC52E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3045EE6D1C5140B500CC52E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		305A8D961C5A5CA200E140B7 /* RFQuiltLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFQuiltLayout.h; sourceTree = "<group>"; };
+		305A8D971C5A5CA200E140B7 /* RFQuiltLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFQuiltLayout.m; sourceTree = "<group>"; };
+		305A8D991C5A5CAC00E140B7 /* RFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFViewController.h; sourceTree = "<group>"; };
+		305A8D9A1C5A5CAC00E140B7 /* RFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFViewController.m; sourceTree = "<group>"; };
+		305A8D9B1C5A5CAC00E140B7 /* RFViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RFViewController.xib; sourceTree = "<group>"; };
+		305A8D9E1C5A5E8800E140B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		305A8DA01C5A5E9000E140B7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		305A8DA21C5A5ED100E140B7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7329265C1C5851F4000230D0 /* ImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollectionViewCell.h; sourceTree = "<group>"; };
 		7329265D1C5851F4000230D0 /* ImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionViewCell.m; sourceTree = "<group>"; };
 		732926601C585603000230D0 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -89,8 +102,6 @@
 		732926801C585603000230D0 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		732926911C58560A000230D0 /* Data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
 		732926931C585BF0000230D0 /* 占位图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "占位图.png"; path = "SDWebImage/占位图.png"; sourceTree = "<group>"; };
-		7336848E1C5A1E870027A43D /* UpdateCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateCollectionViewController.h; sourceTree = "<group>"; };
-		7336848F1C5A1E870027A43D /* UpdateCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +109,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				305A8DA31C5A5ED100E140B7 /* UIKit.framework in Frameworks */,
+				305A8DA11C5A5E9000E140B7 /* CoreGraphics.framework in Frameworks */,
+				305A8D9F1C5A5E8800E140B7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +140,9 @@
 		3045EE501C5140B500CC52E9 = {
 			isa = PBXGroup;
 			children = (
+				305A8DA21C5A5ED100E140B7 /* UIKit.framework */,
+				305A8DA01C5A5E9000E140B7 /* CoreGraphics.framework */,
+				305A8D9E1C5A5E8800E140B7 /* Foundation.framework */,
 				3045EE5B1C5140B500CC52E9 /* Model */,
 				3045EE5A1C5140B500CC52E9 /* Products */,
 			);
@@ -221,8 +238,11 @@
 		733684911C5A1E8C0027A43D /* 瀑布流 升级版 */ = {
 			isa = PBXGroup;
 			children = (
-				7336848E1C5A1E870027A43D /* UpdateCollectionViewController.h */,
-				7336848F1C5A1E870027A43D /* UpdateCollectionViewController.m */,
+				305A8D961C5A5CA200E140B7 /* RFQuiltLayout.h */,
+				305A8D971C5A5CA200E140B7 /* RFQuiltLayout.m */,
+				305A8D991C5A5CAC00E140B7 /* RFViewController.h */,
+				305A8D9A1C5A5CAC00E140B7 /* RFViewController.m */,
+				305A8D9B1C5A5CAC00E140B7 /* RFViewController.xib */,
 			);
 			name = "瀑布流 升级版";
 			sourceTree = "<group>";
@@ -288,6 +308,7 @@
 				3045EE691C5140B500CC52E9 /* Assets.xcassets in Resources */,
 				3045EE671C5140B500CC52E9 /* Main.storyboard in Resources */,
 				732926941C585BF0000230D0 /* 占位图.png in Resources */,
+				305A8D9D1C5A5CAC00E140B7 /* RFViewController.xib in Resources */,
 				732926921C58560A000230D0 /* Data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +323,7 @@
 				30118BC61C57D14B00C755E5 /* QSYCollectionViewController.m in Sources */,
 				732926881C585603000230D0 /* SDWebImageManager.m in Sources */,
 				732926831C585603000230D0 /* SDImageCache.m in Sources */,
+				305A8D981C5A5CA200E140B7 /* RFQuiltLayout.m in Sources */,
 				732926871C585603000230D0 /* SDWebImageDownloaderOperation.m in Sources */,
 				732926901C585603000230D0 /* UIView+WebCacheOperation.m in Sources */,
 				3045EE641C5140B500CC52E9 /* ViewController.m in Sources */,
@@ -313,12 +335,12 @@
 				7329268D1C585603000230D0 /* UIImage+WebP.m in Sources */,
 				7329268F1C585603000230D0 /* UIImageView+WebCache.m in Sources */,
 				732926851C585603000230D0 /* SDWebImageDecoder.m in Sources */,
-				733684901C5A1E870027A43D /* UpdateCollectionViewController.m in Sources */,
 				30118BC91C57D16400C755E5 /* CollectionViewController.m in Sources */,
 				732926811C585603000230D0 /* MKAnnotationView+WebCache.m in Sources */,
 				732926841C585603000230D0 /* SDWebImageCompat.m in Sources */,
 				7329265E1C5851F4000230D0 /* ImageCollectionViewCell.m in Sources */,
 				3045EE5E1C5140B500CC52E9 /* main.m in Sources */,
+				305A8D9C1C5A5CAC00E140B7 /* RFViewController.m in Sources */,
 				7329268C1C585603000230D0 /* UIImage+MultiFormat.m in Sources */,
 				7329268E1C585603000230D0 /* UIImageView+HighlightedWebCache.m in Sources */,
 				7329268B1C585603000230D0 /* UIImage+GIF.m in Sources */,
