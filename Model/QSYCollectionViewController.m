@@ -59,9 +59,15 @@ static NSString * const footerIndetifier = @"footerInden";
         UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headerIndetifier forIndexPath:indexPath];
         headerView.backgroundColor = [UIColor yellowColor];
         UILabel *label = [[UILabel alloc] init];
-        label.frame = CGRectMake(0, 0, headerView.bounds.size.width, headerView.bounds.size.height);
+//        label.frame = CGRectMake(0, 0, headerView.bounds.size.width, headerView.bounds.size.height);
+        label.frame = CGRectMake(10, 0, 100, 100);
         label.text = @"我是区头";
         [headerView addSubview:label];
+        
+        UILabel *label1 = [[UILabel alloc] init];
+        label1.frame = CGRectMake(300, 0, 90, 100);
+        label1.text = @"我是区头";
+        [headerView addSubview:label1];
         return headerView;
         
     } else {

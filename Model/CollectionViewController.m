@@ -81,27 +81,45 @@ static NSString * const footerIndetifier = @"footerIndetifier";
  
     if (kind == UICollectionElementKindSectionHeader) {
         UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headerIndetifier forIndexPath:indexPath];
-        headerView.backgroundColor = [UIColor yellowColor];
-        UILabel *label = [[UILabel alloc] init];
-        label.frame = CGRectMake(0, 0, headerView.bounds.size.width, headerView.bounds.size.height);
-        label.text = @"我是区头";
-        [headerView addSubview:label];
-        return headerView;
+//      背景视图
+        UIView *backView = [[UIView alloc]init];
+        backView.frame = CGRectMake(0, 0, headerView.frame.size.width, headerView.frame.size.height);
+        backView.backgroundColor = [UIColor yellowColor];
+        [headerView addSubview:backView];
         
+        UILabel *label = [[UILabel alloc] init];
+        label.frame = CGRectMake(0, 0, backView.bounds.size.width, backView.bounds.size.height);
+         [backView addSubview:label];
+        if (indexPath.section == 0) {//分区0
+            label.text = @"我是区头0";
+        } else {
+            label.text = @"我是区头1";
+        }
+        return headerView;
     } else {
         UICollectionReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:footerIndetifier forIndexPath:indexPath];
-        footerView.backgroundColor = [UIColor yellowColor];
+        //      背景视图
+        UIView *backView = [[UIView alloc]init];
+        backView.frame = CGRectMake(0, 0, footerView.frame.size.width, footerView.frame.size.height);
+        backView.backgroundColor = [UIColor redColor];
+        [footerView addSubview:backView];
+
         UILabel *label = [[UILabel alloc] init];
-        label.frame = CGRectMake(0, 0, footerView.bounds.size.width, footerView.bounds.size.height);
-        label.text = @"我是区尾";
+        label.frame = CGRectMake(0, 0, backView.bounds.size.width, backView.bounds.size.height);
         [footerView addSubview:label];
+        if (indexPath.section == 0) {//分区0
+            label.text = @"我是区尾0";
+        } else {
+            label.text = @"我是区尾1";
+        }
+
         return footerView;
     }
   
 }
 #pragma mark 代理方法
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
