@@ -63,11 +63,6 @@ static NSString * const footerIndetifier = @"footerInden";
         label.frame = CGRectMake(10, 0, 100, 100);
         label.text = @"我是区头";
         [headerView addSubview:label];
-        
-        UILabel *label1 = [[UILabel alloc] init];
-        label1.frame = CGRectMake(300, 0, 90, 100);
-        label1.text = @"我是区头";
-        [headerView addSubview:label1];
         return headerView;
         
     } else {
@@ -79,7 +74,6 @@ static NSString * const footerIndetifier = @"footerInden";
         [footerView addSubview:label];
         return footerView;
     }
-    
 }
 
 

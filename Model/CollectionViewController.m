@@ -7,17 +7,20 @@
 //
 
 #import "CollectionViewController.h"
+#import "ImageHeaderCollectionReusableView.h"
+#import "ImageFooterCollectionReusableView.h"
 #import "ImageCollectionViewCell.h"
 #import "UIImageView+WebCache.h"
+
 static NSString * const cellIndetifier = @"imageCollceitonCell";
-static NSString * const headerIndetifier = @"headerIndetifier";
-static NSString * const footerIndetifier = @"footerIndetifier";
-@interface CollectionViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+static NSString * const headerIndetifier = @"qsyHeaderIndetifier";
+static NSString * const footerIndetifier = @"qsyFooterIndetifier";
+@interface CollectionViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate>
 {
     UICollectionView *_collectionView;
     NSArray *_titleArray;
     NSArray *_imageArray;
-    
+    UIScrollView *bgScrollview;
 }
 
 @end
@@ -26,30 +29,33 @@ static NSString * const footerIndetifier = @"footerIndetifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addbgScrollview];//添加父视图为 Scrollview
     [self initFlowLayoutAndCollectionView];//初始化布局和CollectionView
     [self registerCellAndheaderFooter];//注册cell和区头区尾
     [self addData];//添加数据
+    
+}
 
+- (void)addbgScrollview {
+    bgScrollview = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:bgScrollview];
 }
 
 - (void)initFlowLayoutAndCollectionView {
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-//    区头区尾的宽度默认都是屏宽（竖向是屏宽，竖向是屏高）
-    flowLayout.headerReferenceSize = CGSizeMake(100, 100);
+    flowLayout.headerReferenceSize = CGSizeMake(100, 100); //区头区尾的宽度默认都是屏宽（竖向是屏宽，竖向是屏高）
     flowLayout.footerReferenceSize = CGSizeMake(100, 100);
     flowLayout.minimumInteritemSpacing = 10;
     flowLayout.minimumLineSpacing = 15;
-    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;//横向滚动UICollectionViewScrollDirectionHorizontal;
     flowLayout.sectionInset = UIEdgeInsetsMake(20, 10, 20, 10);
     flowLayout.itemSize = CGSizeMake(100, 150);
     
-    _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flowLayout];//frame 是collectionView的可视区域。
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, bgScrollview.bounds.size.width, bgScrollview.bounds.size.height-64)  collectionViewLayout:flowLayout];// 不能直接使用 bgScrollview.bounds，contentSize本身是从 （0，0） 开始，但_collectionView实际可视的位置是（64，0），是contentSize的位置上移了
     _collectionView.backgroundColor = [UIColor whiteColor];
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
-    [self.view addSubview:_collectionView];
-
-    
+    [bgScrollview addSubview:_collectionView];
 }
 
 - (void)addData {
@@ -68,55 +74,30 @@ static NSString * const footerIndetifier = @"footerIndetifier";
     }];
 }
 
+// 注册cell和headerfooter
 - (void)registerCellAndheaderFooter {
     
     [_collectionView registerClass:[ImageCollectionViewCell class] forCellWithReuseIdentifier:cellIndetifier];
     
-    [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerIndetifier];
+    [_collectionView registerClass:[ImageHeaderCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerIndetifier];
     
-    [_collectionView registerClass:[UICollectionReusableView class]forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:footerIndetifier];
+    [_collectionView registerClass:[ImageFooterCollectionReusableView class]forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:footerIndetifier];
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
- 
+    UICollectionReusableView *resusableView = nil;
     if (kind == UICollectionElementKindSectionHeader) {
-        UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headerIndetifier forIndexPath:indexPath];
-//      背景视图
-        UIView *backView = [[UIView alloc]init];
-        backView.frame = CGRectMake(0, 0, headerView.frame.size.width, headerView.frame.size.height);
-        backView.backgroundColor = [UIColor yellowColor];
-        [headerView addSubview:backView];
-        
-        UILabel *label = [[UILabel alloc] init];
-        label.frame = CGRectMake(0, 0, backView.bounds.size.width, backView.bounds.size.height);
-         [backView addSubview:label];
-        if (indexPath.section == 0) {//分区0
-            label.text = @"我是区头0";
-        } else {
-            label.text = @"我是区头1";
-        }
-        return headerView;
+        ImageHeaderCollectionReusableView *headerView = (ImageHeaderCollectionReusableView *)[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headerIndetifier forIndexPath:indexPath];
+        headerView.titleLabel.text = [NSString stringWithFormat:@"我是区头的%d",indexPath.section];
+        resusableView = headerView;
     } else {
-        UICollectionReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:footerIndetifier forIndexPath:indexPath];
-        //      背景视图
-        UIView *backView = [[UIView alloc]init];
-        backView.frame = CGRectMake(0, 0, footerView.frame.size.width, footerView.frame.size.height);
-        backView.backgroundColor = [UIColor redColor];
-        [footerView addSubview:backView];
-
-        UILabel *label = [[UILabel alloc] init];
-        label.frame = CGRectMake(0, 0, backView.bounds.size.width, backView.bounds.size.height);
-        [footerView addSubview:label];
-        if (indexPath.section == 0) {//分区0
-            label.text = @"我是区尾0";
-        } else {
-            label.text = @"我是区尾1";
-        }
-
-        return footerView;
+        ImageFooterCollectionReusableView *footerView = (ImageFooterCollectionReusableView *)[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:footerIndetifier forIndexPath:indexPath];
+        footerView.titleLabel.text = [NSString stringWithFormat:@"我是区尾的%d",indexPath.section];
+        resusableView = footerView;
     }
-  
+    return resusableView;
 }
+
 #pragma mark 代理方法
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 2;
@@ -129,7 +110,7 @@ static NSString * const footerIndetifier = @"footerIndetifier";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIndetifier forIndexPath:indexPath];
     
-    cell.titlLabel.text = _titleArray[indexPath.item];
+    cell.titlLabel.text = @"我思故我在";//_titleArray[indexPath.item];
     NSDictionary *dic = [_imageArray objectAtIndex:indexPath.item];
     NSURL *imageUrl = [NSURL URLWithString:[dic objectForKey:@"thumbURL"]];
     [cell.imageV sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"占位图"]];
@@ -137,7 +118,7 @@ static NSString * const footerIndetifier = @"footerIndetifier";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+    NSLog(@"我就是测一测是%d区的%d",indexPath.section,indexPath.item);
 }
 
 #pragma mark layout布局方法
@@ -153,6 +134,7 @@ static NSString * const footerIndetifier = @"footerIndetifier";
     if (section == 0 ) {
         return 5;
     } else return 15;
-
+    
 }
+
 @end

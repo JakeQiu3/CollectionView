@@ -40,6 +40,8 @@
 		732926901C585603000230D0 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 732926801C585603000230D0 /* UIView+WebCacheOperation.m */; };
 		732926921C58560A000230D0 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 732926911C58560A000230D0 /* Data.json */; };
 		732926941C585BF0000230D0 /* 占位图.png in Resources */ = {isa = PBXBuildFile; fileRef = 732926931C585BF0000230D0 /* 占位图.png */; };
+		73DBFDF01D9BAD4F0036B528 /* ImageHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DBFDEF1D9BAD4F0036B528 /* ImageHeaderCollectionReusableView.m */; };
+		73DBFDF61D9BB2EB0036B528 /* ImageFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DBFDF51D9BB2EB0036B528 /* ImageFooterCollectionReusableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +104,10 @@
 		732926801C585603000230D0 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		732926911C58560A000230D0 /* Data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
 		732926931C585BF0000230D0 /* 占位图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "占位图.png"; path = "SDWebImage/占位图.png"; sourceTree = "<group>"; };
+		73DBFDEE1D9BAD4F0036B528 /* ImageHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHeaderCollectionReusableView.h; sourceTree = "<group>"; };
+		73DBFDEF1D9BAD4F0036B528 /* ImageHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageHeaderCollectionReusableView.m; sourceTree = "<group>"; };
+		73DBFDF41D9BB2EB0036B528 /* ImageFooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFooterCollectionReusableView.h; sourceTree = "<group>"; };
+		73DBFDF51D9BB2EB0036B528 /* ImageFooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFooterCollectionReusableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +129,12 @@
 			children = (
 				30118BC71C57D16400C755E5 /* CollectionViewController.h */,
 				30118BC81C57D16400C755E5 /* CollectionViewController.m */,
-				7329265F1C585603000230D0 /* SDWebImage */,
+				7329265C1C5851F4000230D0 /* ImageCollectionViewCell.h */,
+				7329265D1C5851F4000230D0 /* ImageCollectionViewCell.m */,
+				73DBFDEE1D9BAD4F0036B528 /* ImageHeaderCollectionReusableView.h */,
+				73DBFDEF1D9BAD4F0036B528 /* ImageHeaderCollectionReusableView.m */,
+				73DBFDF41D9BB2EB0036B528 /* ImageFooterCollectionReusableView.h */,
+				73DBFDF51D9BB2EB0036B528 /* ImageFooterCollectionReusableView.m */,
 			);
 			name = "瀑布流 view版";
 			sourceTree = "<group>";
@@ -164,11 +175,9 @@
 				3045EE601C5140B500CC52E9 /* AppDelegate.m */,
 				3045EE621C5140B500CC52E9 /* ViewController.h */,
 				3045EE631C5140B500CC52E9 /* ViewController.m */,
-				7329265C1C5851F4000230D0 /* ImageCollectionViewCell.h */,
-				7329265D1C5851F4000230D0 /* ImageCollectionViewCell.m */,
-				733684911C5A1E8C0027A43D /* 瀑布流 升级版 */,
 				30118BC31C57D0F500C755E5 /* 瀑布流 controller版 */,
 				30118BC21C57D0D100C755E5 /* 瀑布流 view版 */,
+				733684911C5A1E8C0027A43D /* 瀑布流 升级版 */,
 				3045EE5C1C5140B500CC52E9 /* Supporting Files */,
 			);
 			path = Model;
@@ -229,6 +238,7 @@
 		732926951C587171000230D0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				7329265F1C585603000230D0 /* SDWebImage */,
 				732926911C58560A000230D0 /* Data.json */,
 				732926931C585BF0000230D0 /* 占位图.png */,
 			);
@@ -278,6 +288,7 @@
 				TargetAttributes = {
 					3045EE581C5140B500CC52E9 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -327,8 +338,10 @@
 				732926871C585603000230D0 /* SDWebImageDownloaderOperation.m in Sources */,
 				732926901C585603000230D0 /* UIView+WebCacheOperation.m in Sources */,
 				3045EE641C5140B500CC52E9 /* ViewController.m in Sources */,
+				73DBFDF01D9BAD4F0036B528 /* ImageHeaderCollectionReusableView.m in Sources */,
 				7329268A1C585603000230D0 /* UIButton+WebCache.m in Sources */,
 				732926821C585603000230D0 /* NSData+ImageContentType.m in Sources */,
+				73DBFDF61D9BB2EB0036B528 /* ImageFooterCollectionReusableView.m in Sources */,
 				732926891C585603000230D0 /* SDWebImagePrefetcher.m in Sources */,
 				732926861C585603000230D0 /* SDWebImageDownloader.m in Sources */,
 				3045EE611C5140B500CC52E9 /* AppDelegate.m in Sources */,
@@ -455,10 +468,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Model/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wnqsy.com.Model;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Model/Model-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -466,10 +483,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Model/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wnqsy.com.Model;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Model/Model-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
