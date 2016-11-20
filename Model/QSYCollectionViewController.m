@@ -9,8 +9,7 @@
 #import "QSYCollectionViewController.h"
 #import "ImageCollectionViewCell.h"
 #import "UIImageView+WebCache.h"
-@interface QSYCollectionViewController ()<UICollectionViewDelegateFlowLayout>
-{
+@interface QSYCollectionViewController ()<UICollectionViewDelegateFlowLayout> {
     NSArray *_titleArray;
     NSArray *_imageArray;
 }

@@ -11,7 +11,7 @@
 #import "ImageFooterCollectionReusableView.h"
 #import "ImageCollectionViewCell.h"
 #import "UIImageView+WebCache.h"
-
+#import "UIView+Extension.h"
 static NSString * const cellIndetifier = @"imageCollceitonCell";
 static NSString * const headerIndetifier = @"qsyHeaderIndetifier";
 static NSString * const footerIndetifier = @"qsyFooterIndetifier";
@@ -88,11 +88,14 @@ static NSString * const footerIndetifier = @"qsyFooterIndetifier";
     UICollectionReusableView *resusableView = nil;
     if (kind == UICollectionElementKindSectionHeader) {
         ImageHeaderCollectionReusableView *headerView = (ImageHeaderCollectionReusableView *)[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headerIndetifier forIndexPath:indexPath];
-        headerView.titleLabel.text = [NSString stringWithFormat:@"我是区头的%d",indexPath.section];
+        headerView.titleLabel.text = [NSString stringWithFormat:@"我是区头的%d，我骄傲",indexPath.section];
+        CGSize headerSize =   [ImageHeaderCollectionReusableView sizeForCell];
+        headerView.size = headerSize;
         resusableView = headerView;
     } else {
         ImageFooterCollectionReusableView *footerView = (ImageFooterCollectionReusableView *)[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:footerIndetifier forIndexPath:indexPath];
-        footerView.titleLabel.text = [NSString stringWithFormat:@"我是区尾的%d",indexPath.section];
+        footerView.titleLabel.text = [NSString stringWithFormat:@"我是区尾的%d，我特么自豪",indexPath.section];
+        [ImageFooterCollectionReusableView sizeForCell];
         resusableView = footerView;
     }
     return resusableView;

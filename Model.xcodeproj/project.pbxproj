@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		30118BC61C57D14B00C755E5 /* QSYCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30118BC51C57D14B00C755E5 /* QSYCollectionViewController.m */; };
 		30118BC91C57D16400C755E5 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30118BC81C57D16400C755E5 /* CollectionViewController.m */; };
+		301721771DE1453E00345E26 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 301721761DE1453E00345E26 /* UIView+Extension.m */; };
 		3045EE5E1C5140B500CC52E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3045EE5D1C5140B500CC52E9 /* main.m */; };
 		3045EE611C5140B500CC52E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3045EE601C5140B500CC52E9 /* AppDelegate.m */; };
 		3045EE641C5140B500CC52E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3045EE631C5140B500CC52E9 /* ViewController.m */; };
@@ -49,6 +50,8 @@
 		30118BC51C57D14B00C755E5 /* QSYCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSYCollectionViewController.m; sourceTree = "<group>"; };
 		30118BC71C57D16400C755E5 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		30118BC81C57D16400C755E5 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; wrapsLines = 1; };
+		301721751DE1453E00345E26 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		301721761DE1453E00345E26 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		3045EE591C5140B500CC52E9 /* Model.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Model.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3045EE5D1C5140B500CC52E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3045EE5F1C5140B500CC52E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 			children = (
 				732926951C587171000230D0 /* Resource */,
 				3045EE5F1C5140B500CC52E9 /* AppDelegate.h */,
+				301721751DE1453E00345E26 /* UIView+Extension.h */,
+				301721761DE1453E00345E26 /* UIView+Extension.m */,
 				3045EE601C5140B500CC52E9 /* AppDelegate.m */,
 				3045EE621C5140B500CC52E9 /* ViewController.h */,
 				3045EE631C5140B500CC52E9 /* ViewController.m */,
@@ -349,6 +354,7 @@
 				7329268F1C585603000230D0 /* UIImageView+WebCache.m in Sources */,
 				732926851C585603000230D0 /* SDWebImageDecoder.m in Sources */,
 				30118BC91C57D16400C755E5 /* CollectionViewController.m in Sources */,
+				301721771DE1453E00345E26 /* UIView+Extension.m in Sources */,
 				732926811C585603000230D0 /* MKAnnotationView+WebCache.m in Sources */,
 				732926841C585603000230D0 /* SDWebImageCompat.m in Sources */,
 				7329265E1C5851F4000230D0 /* ImageCollectionViewCell.m in Sources */,

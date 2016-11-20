@@ -8,7 +8,7 @@
 
 #import "ImageHeaderCollectionReusableView.h"
 #define screenWidth [UIScreen mainScreen].bounds.size.width
-#define headerViewH 100
+#define headerViewH 50
 #define titleLabelH 40
 @implementation ImageHeaderCollectionReusableView
 
@@ -26,7 +26,8 @@
     backView.backgroundColor = [UIColor yellowColor];
     [self addSubview:backView];
     
-    _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 30, backView.bounds.size.width, titleLabelH)];
+    _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, backView.bounds.size.width, titleLabelH)];
+    _titleLabel.backgroundColor = [UIColor greenColor];
     _titleLabel.textColor = [UIColor redColor];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.font = [UIFont systemFontOfSize:15.0f];
@@ -34,7 +35,7 @@
 }
 
 + (CGSize)sizeForCell {
-    static CGSize size = {0,0};
+    static  CGSize size = {0,0};// 只适合固定的头部高度
     if (!size.width) {
         size.width = screenWidth;
         size.height = headerViewH;
